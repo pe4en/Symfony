@@ -1,0 +1,10 @@
+user_user_homepage:
+    pattern:  /users/list
+    defaults: { _controller: UserUserBundle:Default:index }
+user_user_delete:
+        pattern:  /users/delete/{user}
+        defaults: { _controller: UserUserBundle:Default:delete }
+user_user_create:
+        pattern:  /users/create/
+        defaults: { _controller: UserUserBundle:Default:create }
+
