@@ -9,32 +9,35 @@
 <body>
 <div class="container">
 
-        <h3>Users</h3>
-
+    <h3>Users</h3>
+    {{ requestUri }}
     <div class="row" >
         <a type="submit" href="{{ path ('user_user_create') }}" class="btn btn-primary" >Create User</a>
-
         <table class="table table-striped table-bordered table-hover">
             <thead>
             <tr>
                 <th>Id</th>
                 <th>Name</th>
                 <th>LastName</th>
+                <th>Age</th>
+                <th>Action</th>
             </tr>
             </thead>
             <tbody>
             <form class="form-horizontal"  action="" method="post">
                 <tr>
            {% for user in users %}
-                    <td>{{ user.getId }} </td>
+                <td>{{ user.getId }} </td>
                 <td>{{ user.getName }} </td>
                 <td>{{ user.getLastName }}</td>
                 <td>{{ user.getAge }}</td>
                 <td width=60>
                     <a class="btn btn-success" href="{{ path ('user_user_delete', {'user':user.getId})}}">Delete</a>
-                    </td>'
+                    </td>
                 </tr>
+
                 {% endfor %}
+
             </form>
             </tbody>
         </table>

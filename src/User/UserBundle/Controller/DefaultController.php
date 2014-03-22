@@ -12,7 +12,7 @@ class DefaultController extends Controller
     {
     $userRepo=$this->getDoctrine()->getRepository('UserUserBundle:User');
     $user=$userRepo->findAll();
-    return $this->render('UserUserBundle:Default:index.html.twig', array('users' => $user));
+    return $this->render('UserUserBundle:Default:index.html.twig', array('users' => $user,'requestUri'=>$this->get('user_user.strokit')->getRequestData()));
 
     }
     public function deleteAction(User $user)
